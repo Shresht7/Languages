@@ -40,6 +40,7 @@
 <style>
     #list {
         width: 100%;
+        max-width: 35vw;
         height: 100%;
         display: flex;
         flex-direction: column;

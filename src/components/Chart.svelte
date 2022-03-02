@@ -51,6 +51,7 @@
 <style>
     div {
         width: 100%;
+        max-width: 40vw;
         height: 100%;
         display: flex;
         flex-direction: column;
