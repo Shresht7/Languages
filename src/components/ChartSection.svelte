@@ -5,7 +5,9 @@
     //  Helpers
     import { getLanguageColor, percentage, percentageString } from "../helpers";
 
-    const languages: [string, number][] = Object.entries(data);
+    const languages: [string, number][] = Object.entries(data).sort(
+        (a, b) => b[1] - a[1]
+    );
 
     /** Aggregated sum of all bytes across all languages */
     const totalBytes = languages.reduce((acc, [_, bytes]) => acc + bytes, 0);
