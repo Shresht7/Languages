@@ -30,4 +30,10 @@
         height: 100%;
         max-height: 60vh;
     }
+
+    @media (max-width: 768px) {
+        section {
+            flex-direction: column;
+        }
+    }
 </style>

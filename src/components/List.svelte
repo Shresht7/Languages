@@ -48,6 +48,12 @@
         align-items: center;
     }
 
+    @media (max-width: 768px) {
+        #list {
+            max-width: 70vw;
+        }
+    }
+
     ol {
         width: 100%;
         display: flex;

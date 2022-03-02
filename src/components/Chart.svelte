@@ -22,6 +22,7 @@
         {#each languages as [language, bytes], idx}
             <!-- Percentage share of the current language -->
             {(percent = percentage(bytes / totalBytes))}
+
             <!-- Calculate the current cumulative number of bytes -->
             {(cumulativePercent =
                 percentage(
