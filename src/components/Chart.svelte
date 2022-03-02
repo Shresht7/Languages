@@ -7,15 +7,32 @@
     export let languages: [string, number][] = [];
     /** Aggregated sum of the number of bytes across all languages */
     export let totalBytes: number = 1;
+
+    //  State
+    let percent: number = 0;
+    let cumulativePercent: number = 0;
 </script>
 
 <div>
     <svg height="42" width="42" viewBox="0 0 42 42">
-        <!-- DOUGHNUT CIRCLE -->
+        <!-- BACKDROP CIRCLE -->
         <circle r="21" cx="21" cy="21" fill="transparent" />
 
         <!-- PIE-CHART SEGMENTS -->
         {#each languages as [language, bytes], idx}
+            <!-- Percentage share of the current language -->
+            {(percent = percentage(bytes / totalBytes))}
+            <!-- Calculate the current cumulative number of bytes -->
+            {(cumulativePercent =
+                percentage(
+                    languages
+                        // filter languages below the current index
+                        .filter((_, i) => i < idx)
+                        //  Calculate the sum
+                        .reduce((a, c) => a + c[1], 0)
+                ) / totalBytes)}
+
+            <!-- SEGMENT -->
             <circle
                 r="15.91549430918954"
                 cx="21"
@@ -23,17 +40,8 @@
                 fill="transparent"
                 stroke={getLanguageColor(language)}
                 stroke-width="3"
-                stroke-dasharray={`${percentage(bytes / totalBytes)} ${
-                    100 - percentage(bytes / totalBytes)
-                }`}
-                stroke-dashoffset={`${
-                    100 -
-                    percentage(
-                        languages
-                            .filter((_, i) => i < idx)
-                            .reduce((a, c) => a + c[1], 0) / totalBytes
-                    )
-                }`}
+                stroke-dasharray={`${percent} ${100 - percent}`}
+                stroke-dashoffset={`${100 - cumulativePercent}`}
                 transform="rotate(-90) translate(-42)"
             />
         {/each}
