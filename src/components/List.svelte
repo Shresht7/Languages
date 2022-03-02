@@ -1,4 +1,7 @@
 <script lang="ts">
+    //  Transition
+    import { fly } from "svelte/transition";
+
     //  Helpers
     import { getLanguageColor, percentageString } from "../helpers";
 
@@ -13,7 +16,7 @@
 
 <div id="list">
     <ol>
-        {#each languages as [language, bytes]}
+        {#each languages as [language, bytes], idx}
             <li
                 on:mouseover={() => setHovering(language)}
                 on:focus={() => setHovering(language)}
@@ -22,6 +25,7 @@
                 style:--clr={hoveringOver === language
                     ? getLanguageColor(language)
                     : "black"}
+                in:fly={{ y: 200, duration: 250, delay: 75 + 75 * idx }}
             >
                 <div>
                     <p>{language}</p>

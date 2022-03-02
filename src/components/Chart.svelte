@@ -14,7 +14,12 @@
 </script>
 
 <div>
-    <svg height="42" width="42" viewBox="0 0 42 42">
+    <svg
+        height="42"
+        width="42"
+        viewBox="0 0 42 42"
+        xmlns="http://www.w3.org/2000/svg"
+    >
         <!-- BACKDROP CIRCLE -->
         <circle r="21" cx="21" cy="21" fill="transparent" />
 
