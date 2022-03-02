@@ -103,8 +103,11 @@
 
     li:hover,
     li:focus {
+        color: var(--clr-background);
+        background-color: var(--clr-text);
         outline: 1px solid var(--clr, --clr-text);
         transform: scale(1.05);
+        box-shadow: 0 0 5px 1px var(--clr);
     }
 
     .fade {
