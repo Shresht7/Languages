@@ -3,13 +3,12 @@
     import data from "../data/languages.json";
 
     //  Helpers
-    import { getLanguageColor } from "../helpers";
+    import { getLanguageColor, percentage, percentageString } from "../helpers";
 
     const languages: [string, number][] = Object.entries(data);
-    const totalBytes = languages.reduce((acc, [_, bytes]) => acc + bytes, 0);
 
-    const percentage = (bytes: number, totalBytes: number) =>
-        (bytes / totalBytes) * 100;
+    /** Aggregated sum of all bytes across all languages */
+    const totalBytes = languages.reduce((acc, [_, bytes]) => acc + bytes, 0);
 </script>
 
 <section>
@@ -25,7 +24,7 @@
                     fill="transparent"
                     stroke={getLanguageColor(language)}
                     stroke-width="1"
-                    stroke-dasharray={`${percentage(bytes, totalBytes)} 31.42`}
+                    stroke-dasharray={`${percentage(bytes / totalBytes)} 31.42`}
                     transform="rotate(-90) translate(-24)"
                 />
             {/each}
@@ -36,7 +35,11 @@
     <div>
         <ol>
             {#each languages as [language, bytes]}
-                <li>{language}: {bytes} bytes</li>
+                <li>
+                    {language}: {bytes} bytes ({percentageString(
+                        bytes / totalBytes
+                    )})
+                </li>
             {/each}
         </ol>
     </div>
