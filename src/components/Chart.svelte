@@ -8,6 +8,12 @@
     /** Aggregated sum of the number of bytes across all languages */
     export let totalBytes: number = 1;
 
+    //  Store
+    import { highlight } from "../stores";
+
+    const setHovering = (language: string) => highlight.set(language);
+    const clearHovering = () => highlight.set(null);
+
     //  State
     let percent: number = 0;
     let cumulativePercent: number = 0;
@@ -44,11 +50,17 @@
                 cx="21"
                 cy="21"
                 fill="transparent"
+                class="transitional"
                 stroke={getLanguageColor(language)}
-                stroke-width="3"
+                stroke-width={$highlight === language ? "5" : "3"}
                 stroke-dasharray={`${percent} ${100 - percent}`}
                 stroke-dashoffset={`${100 - cumulativePercent}`}
+                class:fade={$highlight && $highlight !== language}
                 transform="rotate(-90) translate(-42)"
+                on:mouseover={() => setHovering(language)}
+                on:focus={() => setHovering(language)}
+                on:mouseout={() => clearHovering()}
+                on:blur={() => clearHovering()}
             />
         {/each}
     </svg>
@@ -82,5 +94,13 @@
             transform: scale(1);
             opacity: 1;
         }
+    }
+
+    .transitional {
+        transition: all var(--animation-duration) ease-in;
+    }
+
+    .fade {
+        opacity: 0.33;
     }
 </style>
