@@ -91,6 +91,7 @@
   @media (max-width: 768px) {
     main {
       min-height: 100vh;
+      justify-content: flex-start;
     }
   }
 </style>

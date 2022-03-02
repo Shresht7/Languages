@@ -29,11 +29,13 @@
         width: 100%;
         height: 100%;
         max-height: 60vh;
+        gap: 1rem;
     }
 
     @media (max-width: 768px) {
         section {
             flex-direction: column;
+            justify-content: flex-start;
         }
     }
 </style>
