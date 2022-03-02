@@ -47,7 +47,8 @@
 
   /* GENERAL */
   :global(html, body) {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     width: 100vw;
     margin: 0 auto;
   }
@@ -65,11 +66,12 @@
   }
 
   :global(#app) {
-    height: 100%;
+    min-height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
   }
 
   /* LAYOUT */
@@ -79,13 +81,13 @@
   }
 
   main {
-    height: 100%;
     width: clamp(70vw, 85vw, 95vw);
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex: 1;
 
     margin: 0 auto;
     padding: 1.5rem;
@@ -93,5 +95,11 @@
     background-color: var(--clr-background);
     box-shadow: var(--shadow);
     border-radius: 20px;
+  }
+
+  @media (max-width: 768px) {
+    main {
+      min-height: 100vh;
+    }
   }
 </style>

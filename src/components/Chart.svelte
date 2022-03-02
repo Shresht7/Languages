@@ -52,7 +52,7 @@
 <style>
     div {
         width: 100%;
-        max-width: 40vw;
+        max-width: 30vw;
         height: 100%;
         display: flex;
         flex-direction: column;
