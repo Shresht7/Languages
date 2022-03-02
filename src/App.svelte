@@ -72,7 +72,7 @@
 
   /* MAIN */
   main {
-    width: clamp(70vw, 85vw, 95vw);
+    width: 85vw;
 
     display: flex;
     flex-direction: column;
