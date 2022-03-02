@@ -10,21 +10,31 @@
 </script>
 
 <div>
-    <svg height="24" width="24" viewBox="0 0 24 24">
-        <!-- BACKDROP CIRCLE -->
-        <circle r="12" cx="12" cy="12" fill="white" />
+    <svg height="42" width="42" viewBox="0 0 42 42">
+        <!-- DOUGHNUT CIRCLE -->
+        <circle r="21" cx="21" cy="21" fill="transparent" />
 
         <!-- PIE-CHART SEGMENTS -->
-        {#each languages as [language, bytes]}
+        {#each languages as [language, bytes], idx}
             <circle
-                r="7"
-                cx="12"
-                cy="12"
+                r="15.91549430918954"
+                cx="21"
+                cy="21"
                 fill="transparent"
                 stroke={getLanguageColor(language)}
-                stroke-width="1"
-                stroke-dasharray={`${percentage(bytes / totalBytes)} 31.42`}
-                transform="rotate(-90) translate(-24)"
+                stroke-width="3"
+                stroke-dasharray={`${percentage(bytes / totalBytes)} ${
+                    100 - percentage(bytes / totalBytes)
+                }`}
+                stroke-dashoffset={`${
+                    100 -
+                    percentage(
+                        languages
+                            .filter((_, i) => i < idx)
+                            .reduce((a, c) => a + c[1], 0) / totalBytes
+                    )
+                }`}
+                transform="rotate(-90) translate(-42)"
             />
         {/each}
     </svg>
