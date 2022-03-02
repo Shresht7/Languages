@@ -31,7 +31,7 @@
             >
                 <div>
                     <p class="language">{language}</p>
-                    <p class="bytes">{bytes} bytes</p>
+                    <p class="bytes">{bytes.toLocaleString("en-US")} bytes</p>
                 </div>
                 <div>
                     <p class="percentage">
