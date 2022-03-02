@@ -1,11 +1,15 @@
 <script lang="ts">
+  //  Components
+  import ChartSection from "./components/ChartSection.svelte";
 </script>
 
 <!-- HEADER -->
 <header><h1>Languages</h1></header>
 
 <!-- MAIN -->
-<main>Hello World</main>
+<main>
+  <ChartSection />
+</main>
 
 <!-- FOOTER -->
 <footer>
