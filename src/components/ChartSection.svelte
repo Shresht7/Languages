@@ -6,6 +6,10 @@
     import { getLanguageColor } from "../helpers";
 
     const languages: [string, number][] = Object.entries(data);
+    const totalBytes = languages.reduce((acc, [_, bytes]) => acc + bytes, 0);
+
+    const percentage = (bytes: number, totalBytes: number) =>
+        (bytes / totalBytes) * 100;
 </script>
 
 <section>
@@ -21,7 +25,7 @@
                     fill="transparent"
                     stroke={getLanguageColor(language)}
                     stroke-width="1"
-                    stroke-dasharray="100 100"
+                    stroke-dasharray={`${percentage(bytes, totalBytes)} 31.42`}
                     transform="rotate(-90) translate(-24)"
                 />
             {/each}
