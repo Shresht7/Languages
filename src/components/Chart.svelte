@@ -63,10 +63,24 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        animation: scaleup 1s forwards;
+        animation-delay: 200ms;
+        opacity: 0;
     }
 
     svg {
         width: 100%;
         height: 100%;
+    }
+
+    @keyframes scaleup {
+        from {
+            transform: scale(0.01);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
     }
 </style>
