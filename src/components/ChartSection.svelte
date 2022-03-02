@@ -2,6 +2,9 @@
     //  Data
     import data from "../data/languages.json";
 
+    //  Helpers
+    import { getLanguageColor } from "../helpers";
+
     const languages: [string, number][] = Object.entries(data);
 </script>
 
@@ -10,13 +13,13 @@
     <div>
         <svg height="24" width="24" viewBox="0 0 24 24">
             <circle r="12" cx="12" cy="12" fill="white" />
-            {#each languages as [languages, bytes]}
+            {#each languages as [language, bytes]}
                 <circle
                     r="7"
                     cx="12"
                     cy="12"
                     fill="transparent"
-                    stroke="black"
+                    stroke={getLanguageColor(language)}
                     stroke-width="1"
                     stroke-dasharray="100 100"
                     transform="rotate(-90) translate(-24)"
