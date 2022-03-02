@@ -32,6 +32,7 @@
   :global(:root) {
     --clr-backdrop: rgb(224, 224, 224);
     --clr-background: whitesmoke;
+    --clr-text: #353535;
     --clr-shadow: rgba(0, 0, 0, 0.3);
     --shadow: 0px 0px 10px 3px var(--clr-shadow);
     --animation-duration: 250ms;

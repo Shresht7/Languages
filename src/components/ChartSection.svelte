@@ -6,7 +6,7 @@
     //  Data
     import data from "../data/languages.json";
 
-    /** Record of languages and their corresponding number of bytes */
+    /** Record of languages and their corresponding number of bytes sorted in descending order */
     const languages: [string, number][] = Object.entries(data).sort(
         (a, b) => b[1] - a[1]
     );

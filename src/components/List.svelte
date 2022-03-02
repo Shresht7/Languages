@@ -7,20 +7,26 @@
     export let totalBytes: number = 1;
 </script>
 
-<div>
+<div id="list">
     <ol>
         {#each languages as [language, bytes]}
             <li>
-                {language}: {bytes} bytes ({percentageString(
-                    bytes / totalBytes
-                )})
+                <div>
+                    <p>{language}</p>
+                    <p>{bytes} bytes</p>
+                </div>
+                <div>
+                    <p class="percentage">
+                        {percentageString(bytes / totalBytes)}
+                    </p>
+                </div>
             </li>
         {/each}
     </ol>
 </div>
 
 <style>
-    div {
+    #list {
         width: 100%;
         height: 100%;
         display: flex;
@@ -30,10 +36,23 @@
     }
 
     ol {
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        gap: 0.75rem;
+        gap: 0.5rem;
+        padding: 0rem 2rem;
+    }
+
+    li {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid var(--clr-text);
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
     }
 </style>
