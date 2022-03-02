@@ -3,4 +3,5 @@ const colors = {
     Go: '#33CCFF',
 }
 
-export const getLanguageColor = (language) => colors[language] ?? 'black'
+/** Returns the color corresponding to the given language */
+export const getLanguageColor = (language: string): string => colors[language] ?? 'black'
