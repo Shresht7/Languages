@@ -1,22 +1,18 @@
 <script lang="ts">
   //  Components
+  import Header from "./layout/Header.svelte";
   import ChartSection from "./components/ChartSection.svelte";
+  import Footer from "./layout/Footer.svelte";
 </script>
 
-<!-- HEADER -->
-<header><h1>Languages</h1></header>
+<Header />
 
-<!-- MAIN -->
 <main>
   <ChartSection />
 </main>
 
-<!-- FOOTER -->
-<footer>
-  <a href="https://www.github.com/Shresht7/Languages"> View Source Code </a>
-</footer>
+<Footer />
 
-<!-- STYLE -->
 <style>
   /* IMPORTS */
   @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
@@ -74,12 +70,7 @@
     justify-content: space-between;
   }
 
-  /* LAYOUT */
-  header,
-  footer {
-    padding: 1rem 2rem;
-  }
-
+  /* MAIN */
   main {
     width: clamp(70vw, 85vw, 95vw);
 
