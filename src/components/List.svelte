@@ -25,11 +25,12 @@
                 style:--clr={hoveringOver === language
                     ? getLanguageColor(language)
                     : "black"}
+                class:fade={hoveringOver && hoveringOver !== language}
                 in:fly={{ y: 200, duration: 250, delay: 75 + 75 * idx }}
             >
                 <div>
-                    <p>{language}</p>
-                    <p>{bytes} bytes</p>
+                    <p class="language">{language}</p>
+                    <p class="bytes">{bytes} bytes</p>
                 </div>
                 <div>
                     <p class="percentage">
@@ -81,9 +82,17 @@
         border-radius: 8px;
         transition: all var(--animation-duration) ease-in;
     }
-
     li:hover,
     li:focus {
         outline: 1px solid var(--clr, --clr-text);
+        transform: scale(1.05);
+    }
+
+    .fade {
+        opacity: 0.33;
+    }
+
+    .bytes {
+        opacity: 0.5;
     }
 </style>
