@@ -9,9 +9,11 @@
     export let languages: [string, number][] = [];
     export let totalBytes: number = 1;
 
-    let hoveringOver: string | null = "";
-    const setHovering = (l: string) => (hoveringOver = l);
-    const clearHovering = () => (hoveringOver = null);
+    //  Stores
+    import { highlight } from "../stores";
+
+    const setHovering = (language: string) => highlight.set(language);
+    const clearHovering = () => highlight.set(null);
 </script>
 
 <div id="list">
@@ -23,8 +25,8 @@
                 on:mouseout={() => clearHovering()}
                 on:blur={() => clearHovering()}
                 style:--clr={getLanguageColor(language)}
-                class:highlighted={hoveringOver === language}
-                class:fade={hoveringOver && hoveringOver !== language}
+                class:highlighted={$highlight === language}
+                class:fade={$highlight && $highlight !== language}
                 in:fly={{ y: 200, duration: 250, delay: 75 + 75 * idx }}
             >
                 <div>
