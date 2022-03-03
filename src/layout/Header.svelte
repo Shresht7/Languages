@@ -1,14 +1,11 @@
 <script lang="ts">
     //  Components
-    import Button from "../components/utility/Button.svelte";
-
-    //  Themes
-    import theme from "../themes/store";
+    import ToggleTheme from "../components/ToggleTheme.svelte";
 </script>
 
 <header>
     <h1>Languages</h1>
-    <Button on:click={() => theme.toggle()}>Toggle</Button>
+    <ToggleTheme />
 </header>
 
 <style>
