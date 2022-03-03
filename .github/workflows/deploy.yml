@@ -31,4 +31,7 @@ jobs:
           npm run build
 
       - name: Deploy
-        run: git subtree push --prefix dist origin gh-pages
+        run: |
+        git add build
+        git commit -m 'gh-pages deployment'
+        git subtree push --prefix build origin gh-pages
