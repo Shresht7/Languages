@@ -1,6 +1,6 @@
 //  Library
-import { listRepositories } from './listRepositories'
-import { getRepoLanguages } from './getRepoLanguages'
+import { listRepositories } from './listRepositories.js'
+import { getRepoLanguages } from './getRepoLanguages.js'
 
 /**
  * Get language stats for the given users

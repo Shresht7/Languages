@@ -1,6 +1,6 @@
 //  Library
 import * as fs from 'node:fs'
-import { getLanguageStats } from "../library"
+import { getLanguageStats } from "../library/getLanguageStats.js"
 
 //  Get language stats
 const user = 'Shresht7'
