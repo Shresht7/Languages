@@ -1,6 +1,6 @@
 /**
  * Fetches the list of all public repositories for a given user
- * @param user GitHub UserName
+ * @param  user GitHub UserName
  * @returns List of all public repositories for the given user
  */
 export function listRepositories(user: string): Promise<string[]> {
