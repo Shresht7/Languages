@@ -1,6 +1,3 @@
-//  Library
-import fetch from 'node-fetch'
-
 /**
  * Fetches the list of all public repositories for a given user
  * @param {string} user GitHub UserName

@@ -1,6 +1,3 @@
-//  Library
-import fetch from 'node-fetch'
-
 /**
  * Fetches the list of languages (and corresponding bytes) used in the repo.
  * @param {string} user GitHub UserName
