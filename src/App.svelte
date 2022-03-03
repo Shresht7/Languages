@@ -9,7 +9,7 @@
   import Footer from "./layout/Footer.svelte";
 
   //  Data
-  import { getLangua./libraryfrom "./library";
+  import { getLanguageStats } from "./library";
   import cachedData from "./data/languages.json";
 
   let data: Record<string, number> = cachedData;
