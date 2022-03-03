@@ -31,7 +31,7 @@ jobs:
 
       # Fetch language stats and generate data json files
       - name: Fetch 🐕
-        run: node ./scripts/languages.js ${{ GITHUB_ACTOR }}
+        run: node ./scripts/languages.js
 
       # Build the vite project
       - name: Build 🛠

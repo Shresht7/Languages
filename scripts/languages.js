@@ -51,7 +51,7 @@ export async function getLanguageStats(...users) {
 }
 
 //  Get github username - passed in as an argument from the workflow file
-const user = process.argv.slice(2).shift()
+const user = process.env.GITHUB_ACTOR
 if (!user) { console.error('Unable to determine username') }
 
 console.log(user)
