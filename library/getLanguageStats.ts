@@ -1,13 +1,13 @@
 //  Library
-import { listRepositories } from './listRepositories.js'
-import { getRepoLanguages } from './getRepoLanguages.js'
+import { listRepositories } from './listRepositories'
+import { getRepoLanguages } from './getRepoLanguages'
 
 /**
  * Get language stats for the given users
- * @param {...string[]} users Variadic array of GitHub usernames to get language stats for
- * @returns {Record<string, number>} An object mapping languages to their corresponding number of bytes
+ * @param users Variadic array of GitHub usernames to get language stats for
+ * @returns An object mapping languages to their corresponding number of bytes
  */
-export async function getLanguageStats(...users) {
+export async function getLanguageStats(...users: string[]): Promise<Record<string, number>> {
     /** Keeps the record of languages and the corresponding total number of bytes */
     const aggregate = {}
 
