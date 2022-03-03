@@ -24,14 +24,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
+
+      - name: Fetch 🐕
+        run: node ./scripts/github.js
+
       - name: Build 🛠
         run: |
           npm install
           npm run build
-
-      - name: Fetch 🐕
-        run: node ./scripts/github.js
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.5
