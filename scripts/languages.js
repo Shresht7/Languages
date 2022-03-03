@@ -54,6 +54,7 @@ export async function getLanguageStats(...users) {
 const user = process.argv.slice(2).shift()
 if (!user) { console.error('Unable to determine username') }
 
+console.log(user)
 //  Get language stats
 const aggregate = await getLanguageStats(user)
 
