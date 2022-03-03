@@ -1,22 +1,12 @@
 <script lang="ts">
-    //  Helpers
-    import { getLanguageColor, percentage } from "../helpers";
+    //  Components
+    import Segment from "./Segment.svelte";
 
     //  Props
     /** Record of languages and their corresponding number of bytes */
     export let languages: [string, number][] = [];
     /** Aggregated sum of the number of bytes across all languages */
     export let totalBytes: number = 1;
-
-    //  Store
-    import { highlight } from "../stores";
-
-    const setHovering = (language: string) => highlight.set(language);
-    const clearHovering = () => highlight.set(null);
-
-    //  State
-    let percent: number = 0;
-    let cumulativePercent: number = 0;
 </script>
 
 <div>
@@ -31,36 +21,13 @@
 
         <!-- PIE-CHART SEGMENTS -->
         {#each languages as [language, bytes], idx}
-            <!-- Percentage share of the current language -->
-            {(percent = percentage(bytes / totalBytes))}
-
-            <!-- Calculate the current cumulative number of bytes -->
-            {(cumulativePercent =
-                percentage(
-                    languages
-                        // filter languages below the current index
-                        .filter((_, i) => i < idx)
-                        //  Calculate the sum
-                        .reduce((a, c) => a + c[1], 0)
-                ) / totalBytes)}
-
-            <!-- SEGMENT -->
-            <circle
-                r="15.91549430918954"
-                cx="21"
-                cy="21"
-                fill="transparent"
-                class="transitional"
-                stroke={getLanguageColor(language)}
-                stroke-width={$highlight === language ? "5" : "3"}
-                stroke-dasharray={`${percent} ${100 - percent}`}
-                stroke-dashoffset={`${100 - cumulativePercent}`}
-                class:fade={$highlight && $highlight !== language}
-                transform="rotate(-90) translate(-42)"
-                on:mouseover={() => setHovering(language)}
-                on:focus={() => setHovering(language)}
-                on:mouseout={() => clearHovering()}
-                on:blur={() => clearHovering()}
+            <Segment
+                {language}
+                {bytes}
+                {totalBytes}
+                cumulativeBytes={languages
+                    .filter((_, i) => i < idx)
+                    .reduce((a, c) => a + c[1], 0)}
             />
         {/each}
     </svg>
@@ -94,13 +61,5 @@
             transform: scale(1);
             opacity: 1;
         }
-    }
-
-    .transitional {
-        transition: all var(--animation-duration) ease-in;
-    }
-
-    .fade {
-        opacity: 0.33;
     }
 </style>
