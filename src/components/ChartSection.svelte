@@ -15,8 +15,8 @@
 </script>
 
 <section>
-    <Chart {languages} {totalBytes} />
-    <List {languages} {totalBytes} />
+    <Chart bind:languages bind:totalBytes />
+    <List bind:languages bind:totalBytes />
 </section>
 
 <style>
