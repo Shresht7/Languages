@@ -47,7 +47,7 @@
     #list {
         width: 100%;
         max-width: 35vw;
-        height: 100%;
+        max-height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -56,17 +56,20 @@
 
     ol {
         width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
         gap: 0.5rem;
         padding: 0rem 2rem;
+        overflow-y: scroll;
     }
 
     li {
         --clr: var(--clr-text);
         width: 100%;
+        min-height: 3.5rem;
         display: flex;
         flex-direction: row;
         justify-content: space-between;

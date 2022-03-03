@@ -106,6 +106,7 @@
     gap: 2rem;
 
     margin: 0 auto;
+    padding: 2rem 0;
 
     background-color: var(--clr-background);
     box-shadow: var(--shadow);

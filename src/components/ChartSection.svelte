@@ -26,8 +26,7 @@
         justify-content: space-evenly;
         align-items: center;
         width: 100%;
-        height: 100%;
-        max-height: 60vh;
+        height: 60vh;
         gap: 1rem;
     }
 
