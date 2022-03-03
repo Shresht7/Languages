@@ -1,11 +1,15 @@
 <script lang="ts">
     //  Components
-    import ToggleTheme from "../components/ToggleTheme.svelte";
+    import Embed from "./Header/Embed.svelte";
+    import ToggleTheme from "./Header/ToggleTheme.svelte";
 </script>
 
 <header>
     <h1>Languages</h1>
-    <ToggleTheme />
+    <div>
+        <Embed />
+        <ToggleTheme />
+    </div>
 </header>
 
 <style>
@@ -17,5 +21,13 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+    }
+
+    div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.75rem;
     }
 </style>

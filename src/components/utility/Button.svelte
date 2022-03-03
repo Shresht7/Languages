@@ -6,11 +6,12 @@
 
 <style>
     button {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
         font: inherit;
         padding: 0.5rem 1rem;
-    }
-
-    button {
         color: var(--clr-background);
         background-color: var(--clr-text);
         border: 1px solid var(--clr-text);

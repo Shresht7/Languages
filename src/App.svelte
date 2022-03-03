@@ -8,6 +8,13 @@
   import ChartSection from "./components/ChartSection.svelte";
   import Footer from "./layout/Footer.svelte";
 
+  //  Theme
+  import theme from "./themes/store";
+  //  Initialize theme
+  onMount(() => {
+    theme.setRootColors($theme);
+  });
+
   //  Data
   import { getLanguageStats } from "./library";
   import cachedData from "./data/languages.json";
@@ -19,13 +26,6 @@
     if (!username) return;
     data = await getLanguageStats(username);
   }
-
-  //  Theme
-  import theme from "./themes/store";
-  //  Initialize theme
-  onMount(() => {
-    theme.setRootColors($theme);
-  });
 </script>
 
 <Header />
