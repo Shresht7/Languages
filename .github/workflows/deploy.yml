@@ -1,6 +1,4 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Deploy
+name: Build gh-pages
 
 # Controls when the workflow will run
 on:
@@ -25,14 +23,19 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      # Install npm dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Fetch language stats and generate data json files
       - name: Fetch 🐕
         run: node ./scripts/github.js
 
+      # Build the vite project
       - name: Build 🛠
-        run: |
-          npm install
-          npm run build
+        run: npm run build
 
+      # Push build to gh-pages branch
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
