@@ -2,6 +2,9 @@
     //  Library
     import { fly } from "svelte/transition";
 
+    //  Components
+    import Button from "./utility/Button.svelte";
+
     //  Props
     export let value: string = "";
 </script>
@@ -9,7 +12,7 @@
 <div in:fly={{ y: 50, duration: 500, opacity: 0 }}>
     <form on:submit|preventDefault>
         <input bind:value placeholder="username" />
-        <button type="submit">Get</button>
+        <Button type="submit">Get</Button>
     </form>
 </div>
 
@@ -27,23 +30,8 @@
         gap: 0.75rem;
     }
 
-    input,
-    button {
+    input {
         font: inherit;
         padding: 0.5rem 1rem;
-    }
-
-    button {
-        color: var(--clr-background);
-        background-color: var(--clr-text);
-        border: 1px solid var(--clr-text);
-        border-radius: 4px;
-        transition: all var(--animation-duration) ease-in;
-        cursor: pointer;
-    }
-
-    button:hover,
-    button:focus {
-        opacity: 0.8;
     }
 </style>
