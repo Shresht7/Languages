@@ -1,4 +1,7 @@
 <script lang="ts">
+  //  Library
+  import { onMount } from "svelte";
+
   //  Components
   import Header from "./layout/Header.svelte";
   import Input from "./components/Input.svelte";
@@ -16,6 +19,13 @@
     if (!username) return;
     data = await getLanguageStats(username);
   }
+
+  //  Theme
+  import theme from "./themes/store";
+  //  Initialize theme
+  onMount(() => {
+    theme.setRootColors($theme);
+  });
 </script>
 
 <Header />
