@@ -3,16 +3,15 @@
     import Chart from "./Chart.svelte";
     import List from "./List.svelte";
 
-    //  Data
-    import data from "../data/languages.json";
+    export let data: Record<string, number> = {};
 
     /** Record of languages and their corresponding number of bytes sorted in descending order */
-    const languages: [string, number][] = Object.entries(data).sort(
-        (a, b) => b[1] - a[1]
-    );
+    let languages: [string, number][] = [];
+    $: languages = Object.entries(data).sort((a, b) => b[1] - a[1]);
 
     /** Aggregated sum of all bytes across all languages */
-    const totalBytes = languages.reduce((acc, [_, bytes]) => acc + bytes, 0);
+    let totalBytes: number = 1;
+    $: totalBytes = languages.reduce((acc, [_, bytes]) => acc + bytes, 0);
 </script>
 
 <section>

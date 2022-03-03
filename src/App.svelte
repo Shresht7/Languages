@@ -3,12 +3,25 @@
   import Header from "./layout/Header.svelte";
   import ChartSection from "./components/ChartSection.svelte";
   import Footer from "./layout/Footer.svelte";
+
+  //  Data
+  import { getLanguageStats } from "../library";
+  import cachedData from "./data/languages.json";
+
+  let data: Record<string, number> = cachedData;
+
+  let username: string = "";
+  async function fetchData() {
+    data = await getLanguageStats(username);
+  }
 </script>
 
 <Header />
 
 <main>
-  <ChartSection />
+  <input bind:value={username} />
+  <button on:click={fetchData}>GET</button>
+  <ChartSection {data} />
 </main>
 
 <Footer />
