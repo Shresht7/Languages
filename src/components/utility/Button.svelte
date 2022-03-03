@@ -1,6 +1,6 @@
 <script lang="ts"></script>
 
-<button {...$$props}>
+<button {...$$props} on:click>
     <slot />
 </button>
 
