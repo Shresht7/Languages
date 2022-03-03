@@ -4,10 +4,10 @@ import { getRepoLanguages } from './getRepoLanguages'
 
 /**
  * Get language stats for the given users
- * @param users Variadic array of GitHub usernames to get language stats for
- * @returns An object mapping languages to their corresponding number of bytes
+ * @param {...string[]} users Variadic array of GitHub usernames to get language stats for
+ * @returns {Record<string, number>} An object mapping languages to their corresponding number of bytes
  */
-export async function getLanguageStats(...users: string[]): Promise<Record<string, number>> {
+export async function getLanguageStats(...users) {
     /** Keeps the record of languages and the corresponding total number of bytes */
     const aggregate = {}
 

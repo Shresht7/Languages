@@ -1,11 +1,10 @@
-// * This is a Deno script. Run using `deno run --allow-net --allow-write scripts/github.js`
-//  TODO: Move this into a GitHub Action
-
+//  Library
+import * as fs from 'node:fs'
 import { getLanguageStats } from "../library"
 
+//  Get language stats
 const user = 'Shresht7'
-
 const aggregate = await getLanguageStats(user)
 
 //  Write aggregated data to disk
-Deno.writeTextFile('./src/data/languages.json', JSON.stringify(aggregate, null, 2))
+fs.writeFileSync('./src/data/language.json', JSON.stringify(aggregate, null, 2))
