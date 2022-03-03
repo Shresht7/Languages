@@ -1,6 +1,7 @@
 <script lang="ts">
   //  Components
   import Header from "./layout/Header.svelte";
+  import Input from "./components/Input.svelte";
   import ChartSection from "./components/ChartSection.svelte";
   import Footer from "./layout/Footer.svelte";
 
@@ -12,6 +13,7 @@
 
   let username: string = "";
   async function fetchData() {
+    if (!username) return;
     data = await getLanguageStats(username);
   }
 </script>
@@ -19,8 +21,7 @@
 <Header />
 
 <main>
-  <input bind:value={username} />
-  <button on:click={fetchData}>GET</button>
+  <Input bind:value={username} on:submit={fetchData} />
   <ChartSection {data} />
 </main>
 
@@ -92,6 +93,7 @@
     justify-content: center;
     align-items: center;
     flex: 1;
+    gap: 2rem;
 
     margin: 0 auto;
     padding: 1.5rem;
