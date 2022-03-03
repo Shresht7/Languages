@@ -50,9 +50,11 @@ export async function getLanguageStats(...users) {
     return aggregate
 }
 
+//  Get github username - passed in as an argument from the workflow file
+const user = process.argv.slice(2).shift()
+if (!user) { console.error('Unable to determine username') }
 
 //  Get language stats
-const user = 'Shresht7'
 const aggregate = await getLanguageStats(user)
 
 //  Write aggregated data to disk
