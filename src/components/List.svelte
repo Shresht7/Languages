@@ -54,12 +54,6 @@
         align-items: center;
     }
 
-    @media (max-width: 768px) {
-        #list {
-            max-width: 70vw;
-        }
-    }
-
     ol {
         width: 100%;
         display: flex;
@@ -118,5 +112,15 @@
 
     .bytes {
         opacity: 0.5;
+    }
+
+    @media (max-width: 768px) {
+        #list {
+            max-width: 95%;
+        }
+
+        ol {
+            padding: 0.5rem;
+        }
     }
 </style>

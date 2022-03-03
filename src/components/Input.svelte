@@ -1,8 +1,12 @@
 <script lang="ts">
+    //  Library
+    import { fly } from "svelte/transition";
+
+    //  Props
     export let value: string = "";
 </script>
 
-<div>
+<div in:fly={{ y: 50, duration: 500, opacity: 0 }}>
     <form on:submit|preventDefault>
         <input bind:value placeholder="username" />
         <button type="submit">Get</button>

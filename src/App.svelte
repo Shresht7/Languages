@@ -107,6 +107,7 @@
     main {
       min-height: 100vh;
       justify-content: flex-start;
+      padding: 1.5rem 0.5rem;
     }
   }
 </style>
