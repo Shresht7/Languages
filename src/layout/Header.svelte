@@ -1,13 +1,11 @@
 <script lang="ts">
     //  Components
-    import Embed from "./Header/Embed.svelte";
     import ToggleTheme from "./Header/ToggleTheme.svelte";
 </script>
 
 <header>
     <h1>Languages</h1>
     <div>
-        <Embed />
         <ToggleTheme />
     </div>
 </header>
