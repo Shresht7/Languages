@@ -24,9 +24,10 @@
                 on:focus={() => setHovering(language)}
                 on:mouseout={() => clearHovering()}
                 on:blur={() => clearHovering()}
-                style:--clr={getLanguageColor(language)}
                 class:highlighted={$highlight === language}
                 class:fade={$highlight && $highlight !== language}
+                style:--clr={getLanguageColor(language)}
+                style:width={languages.length > 7 ? "15rem" : "100%"}
                 in:fly={{ y: 200, duration: 250, delay: 75 + 75 * idx }}
             >
                 <div>
@@ -45,8 +46,7 @@
 
 <style>
     #list {
-        width: 100%;
-        max-width: 35vw;
+        width: min(100%, 35vw);
         max-height: 100%;
         display: flex;
         flex-direction: column;
@@ -61,9 +61,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+        flex-wrap: wrap;
         gap: 0.5rem;
-        padding: 0rem 2rem;
-        overflow-y: scroll;
+        padding: 0rem 1rem;
+        overflow-y: hidden;
     }
 
     li {

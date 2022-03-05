@@ -36,7 +36,7 @@
 <style>
     div {
         width: 100%;
-        max-width: 30vw;
+        max-width: 35vw;
         height: 100%;
         display: flex;
         flex-direction: column;

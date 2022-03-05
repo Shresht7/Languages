@@ -23,7 +23,7 @@
     section {
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
         width: 100%;
         height: 60vh;
