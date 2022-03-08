@@ -41,6 +41,7 @@ jobs:
         id: Screenshot
         with:
           url: https://shresht7.github.io/Languages
+          delay: 3000
 
       # Push to Main 🌐
       # ===============
