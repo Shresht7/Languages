@@ -4,14 +4,11 @@
     import Icon from "../../components/utility/Icon.svelte";
     import IoIosReturnLeft from "svelte-icons/io/IoIosReturnLeft.svelte";
 
-    //  Transition
-    import { fly } from "svelte/transition";
-
     //  Props
     export let value: string = "";
 </script>
 
-<div in:fly={{ y: 50, duration: 500, opacity: 0 }}>
+<div>
     <form on:submit|preventDefault>
         <input bind:value placeholder="username" />
         <Button type="submit" style="padding: 0.5rem;">

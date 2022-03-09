@@ -7,6 +7,9 @@
     import data from "../stores/data";
     import { getLanguageStats } from "../library";
 
+    //  Transition
+    import { fly } from 'svelte/transition'
+
     let username = "";
     async function fetchData() {
         if (!username) return;
@@ -14,7 +17,7 @@
     }
 </script>
 
-<header>
+<header in:fly={{ y: -100, opacity: 0 }}>
     <h1>Languages</h1>
     <div>
         <Input bind:value={username} on:submit={fetchData} />
