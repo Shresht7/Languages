@@ -91,7 +91,7 @@
     gap: 2rem;
 
     margin: 0 auto;
-    padding: 5vh 2vw;
+    padding: 4vh 2vw;
 
     background-color: var(--clr-background);
     box-shadow: var(--shadow);
@@ -105,7 +105,7 @@
     main {
       width: 98vw;
       justify-content: flex-start;
-      padding: 2vh 1vw;
+      padding: 3vh 1vw;
     }
   }
 </style>

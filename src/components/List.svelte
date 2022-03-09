@@ -27,7 +27,7 @@
                 class:highlighted={$highlight === language}
                 class:fade={$highlight && $highlight !== language}
                 style:--clr={getLanguageColor(language)}
-                style:width={languages.length > 7 ? "15rem" : "100%"}
+                style:width={languages.length > 7 ? "80%" : "100%"}
                 in:fly={{ y: 200, duration: 250, delay: 75 + 75 * idx }}
             >
                 <div>
@@ -47,7 +47,7 @@
 <style>
     #list {
         width: 100%;
-        max-height: 100%;
+        max-height: 75vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -61,6 +61,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+        flex-wrap: wrap;
         gap: 0.5rem;
         padding: 0rem 1rem;
         overflow-y: hidden;
@@ -82,6 +83,15 @@
         transition: all var(--animation-duration) ease-in;
         position: relative;
         overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+        ol {
+            max-height: 60vh;
+        }
+        li {
+            width: 80%;
+        }
     }
 
     .highlighted {
