@@ -6,10 +6,7 @@
     import { getLanguageColor, percentageString } from "../helpers";
 
     //  Stores
-    import { highlight } from "../stores";
-
-    const setHovering = (language: string) => highlight.set(language);
-    const clearHovering = () => highlight.set(null);
+    import { highlight, setHovering, clearHovering } from "../stores/highlight";
 
     //  Props
     /** List item index number */

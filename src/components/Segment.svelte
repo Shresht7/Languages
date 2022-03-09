@@ -3,10 +3,7 @@
     import { percentage, getLanguageColor } from "../helpers";
 
     //  Store
-    import { highlight } from "../stores";
-
-    const setHovering = (language: string) => highlight.set(language);
-    const clearHovering = () => highlight.set(null);
+    import { highlight, setHovering, clearHovering } from "../stores/highlight";
 
     //  Props
     export let language: string = "";

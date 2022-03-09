@@ -1,5 +1,0 @@
-//  ------
-//  STORES
-//  ------
-
-export * from './highlight'
