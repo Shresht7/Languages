@@ -53,6 +53,7 @@
 
   /* GENERAL */
   :global(html, body) {
+    min-height: 100vh;
     height: auto;
     width: 100vw;
     margin: 0 auto;
