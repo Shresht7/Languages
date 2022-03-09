@@ -46,7 +46,7 @@
 
 <style>
     #list {
-        width: min(100%, 35vw);
+        width: 100%;
         max-height: 100%;
         display: flex;
         flex-direction: column;
@@ -61,7 +61,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        flex-wrap: wrap;
         gap: 0.5rem;
         padding: 0rem 1rem;
         overflow-y: hidden;

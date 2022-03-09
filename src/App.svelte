@@ -91,7 +91,7 @@
     gap: 2rem;
 
     margin: 0 auto;
-    padding: 2rem;
+    padding: 5vh 2vw;
 
     background-color: var(--clr-background);
     box-shadow: var(--shadow);
@@ -99,9 +99,13 @@
   }
 
   @media (max-width: 768px) {
+    :global(body) {
+      font-size: 0.75rem;
+    }
     main {
       width: 98vw;
       justify-content: flex-start;
+      padding: 2vh 1vw;
     }
   }
 </style>

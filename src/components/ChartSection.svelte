@@ -27,8 +27,9 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 60vh;
+        height: 100%;
         gap: 1rem;
+        padding: 0 1rem;
     }
 
     @media (max-width: 768px) {
