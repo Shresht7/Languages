@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { onMount } from "svelte";
+
     //  Transition
     import { fly } from "svelte/transition";
 
@@ -17,7 +19,7 @@
 </script>
 
 <div id="list">
-    <ol>
+    <ol on:wheel={(e) => (e.currentTarget.scrollLeft += e.deltaY)}>
         {#each languages as [language, bytes], idx}
             <li
                 on:mouseover={() => setHovering(language)}
@@ -65,6 +67,33 @@
         gap: 0.5rem;
         padding: 0rem 1rem;
         overflow-y: hidden;
+        scroll-behavior: auto;
+    }
+
+    @media (min-width: 768px) {
+        /* width */
+        ol::-webkit-scrollbar {
+            height: 4px;
+            border-radius: 2px;
+        }
+
+        /* Track */
+        ol::-webkit-scrollbar-track {
+            background-color: #575757;
+            border-radius: 2px;
+        }
+
+        /* Handle */
+        ol::-webkit-scrollbar-thumb {
+            background-color: #999;
+            border-radius: 2px;
+        }
+
+        /* Handle on hover */
+        ol::-webkit-scrollbar-thumb:hover {
+            background-color: var(--clr-text);
+            border-radius: 2px;
+        }
     }
 
     li {
