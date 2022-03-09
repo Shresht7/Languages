@@ -65,11 +65,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    color: var(--clr-text);
+    background-color: var(--clr-backdrop);
     font-family: "Share Tech Mono", monospace, -apple-system, BlinkMacSystemFont,
       "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
       "Helvetica Neue", sans-serif;
-    background-color: var(--clr-backdrop);
-    color: var(--clr-text);
   }
 
   :global(#app) {

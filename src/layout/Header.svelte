@@ -10,13 +10,17 @@
     //  Transition
     import { fly } from "svelte/transition";
 
+    /** User input search string for GitHub username */
     let username = "";
-    let loading = false
+    /** Boolean flag to denote whether a fetch request is underway */
+    let loading = false;
+
+    /** Fetch language stats */
     async function fetchData() {
         if (!username) return;
-        loading = true
+        loading = true;
         data.set(await getLanguageStats(username));
-        loading = false
+        loading = false;
     }
 </script>
 
