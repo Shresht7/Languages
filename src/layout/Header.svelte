@@ -5,25 +5,21 @@
 
     //  Library
     import data from "../stores/data";
-    import { getLanguageStats } from "../library";
 
     //  Transition
     import { fly } from "svelte/transition";
 
     let username = "";
-    let loading: boolean = false;
-    async function fetchData() {
-        if (!username) return;
-        loading = true;
-        data.set(await getLanguageStats(username));
-        loading = false;
-    }
 </script>
 
 <header in:fly={{ y: -100, opacity: 0 }}>
     <h1>Languages</h1>
     <div>
-        <Input bind:value={username} on:submit={fetchData} {loading} />
+        <Input
+            bind:value={username}
+            on:submit={() => data.fetchData(username)}
+            loading={data.loading}
+        />
         <ToggleTheme />
     </div>
 </header>
