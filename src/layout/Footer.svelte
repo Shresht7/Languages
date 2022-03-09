@@ -9,4 +9,13 @@
     footer {
         padding: 1rem 2rem;
     }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+        border-bottom: 2px solid var(--clr-text);
+    }
 </style>
