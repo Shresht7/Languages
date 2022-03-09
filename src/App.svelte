@@ -67,10 +67,10 @@
 
   /* GENERAL */
   :global(html, body) {
-    min-height: 100vh;
     height: auto;
     width: 100vw;
     margin: 0 auto;
+    overflow-x: hidden;
   }
 
   :global(body) {
@@ -86,7 +86,6 @@
   }
 
   :global(#app) {
-    min-height: 100vh;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -115,9 +114,8 @@
 
   @media (max-width: 768px) {
     main {
-      min-height: 100vh;
+      width: 98vw;
       justify-content: flex-start;
-      padding: 1.5rem 0.5rem;
     }
   }
 </style>
