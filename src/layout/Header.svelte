@@ -11,16 +11,19 @@
     import { fly } from "svelte/transition";
 
     let username = "";
+    let loading: boolean = false;
     async function fetchData() {
         if (!username) return;
+        loading = true;
         data.set(await getLanguageStats(username));
+        loading = false;
     }
 </script>
 
 <header in:fly={{ y: -100, opacity: 0 }}>
     <h1>Languages</h1>
     <div>
-        <Input bind:value={username} on:submit={fetchData} />
+        <Input bind:value={username} on:submit={fetchData} {loading} />
         <ToggleTheme />
     </div>
 </header>
