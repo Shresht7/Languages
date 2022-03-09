@@ -29,11 +29,12 @@
     }
 
     form {
-        gap: 0.75rem;
+        gap: 0.33rem;
     }
 
     input {
         font: inherit;
+        font-size: 1rem;
         padding: 0.65rem 1rem;
         height: 100%;
     }
