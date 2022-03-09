@@ -3,11 +3,12 @@
     import Chart from "./Chart.svelte";
     import List from "./List.svelte";
 
-    export let data: Record<string, number> = {};
+    //  Data
+    import data from "../stores/data";
 
     /** Record of languages and their corresponding number of bytes sorted in descending order */
     let languages: [string, number][] = [];
-    $: languages = Object.entries(data).sort((a, b) => b[1] - a[1]);
+    $: languages = Object.entries($data).sort((a, b) => b[1] - a[1]);
 
     /** Aggregated sum of all bytes across all languages */
     let totalBytes: number = 1;

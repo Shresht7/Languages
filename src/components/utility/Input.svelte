@@ -1,11 +1,11 @@
 <script lang="ts">
-    //  Library
-    import { fly } from "svelte/transition";
-
     //  Components
-    import Button from "./utility/Button.svelte";
-    import Icon from "./utility/Icon.svelte";
+    import Button from "../../components/utility/Button.svelte";
+    import Icon from "../../components/utility/Icon.svelte";
     import IoIosReturnLeft from "svelte-icons/io/IoIosReturnLeft.svelte";
+
+    //  Transition
+    import { fly } from "svelte/transition";
 
     //  Props
     export let value: string = "";

@@ -4,7 +4,6 @@
 
   //  Components
   import Header from "./layout/Header.svelte";
-  import Input from "./components/Input.svelte";
   import ChartSection from "./components/ChartSection.svelte";
   import Footer from "./layout/Footer.svelte";
 
@@ -14,25 +13,12 @@
   onMount(() => {
     theme.setRootColors($theme);
   });
-
-  //  Data
-  import { getLanguageStats } from "./library";
-  import cachedData from "./data/languages.json";
-
-  let data: Record<string, number> = cachedData;
-
-  let username: string = "";
-  async function fetchData() {
-    if (!username) return;
-    data = await getLanguageStats(username);
-  }
 </script>
 
 <Header />
 
 <main>
-  <Input bind:value={username} on:submit={fetchData} />
-  <ChartSection {data} />
+  <ChartSection />
 </main>
 
 <Footer />
