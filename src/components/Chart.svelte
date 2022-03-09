@@ -1,6 +1,6 @@
 <script lang="ts">
     //  Components
-    import Segment from "./Segment.svelte";
+    import ChartSection from "./ChartSection.svelte";
 
     //  Props
     /** Record of languages and their corresponding number of bytes */
@@ -21,7 +21,7 @@
 
         <!-- PIE-CHART SEGMENTS -->
         {#each languages as [language, bytes], idx}
-            <Segment
+            <ChartSection
                 {language}
                 {bytes}
                 {totalBytes}

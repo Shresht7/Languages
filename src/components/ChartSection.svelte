@@ -1,41 +1,47 @@
 <script lang="ts">
-    //  Components
-    import Chart from "./Chart.svelte";
-    import List from "./List.svelte";
+    //  Helpers
+    import { percentage, getLanguageColor } from "../helpers";
 
-    //  Data
-    import data from "../stores/data";
+    //  Store
+    import { highlight, setHovering, clearHovering } from "../stores/highlight";
 
-    /** Record of languages and their corresponding number of bytes sorted in descending order */
-    let languages: [string, number][] = [];
-    $: languages = Object.entries($data).sort((a, b) => b[1] - a[1]);
+    //  Props
+    export let language: string = "";
+    export let bytes: number = 0;
+    export let cumulativeBytes: number = 0;
+    export let totalBytes: number = 1;
 
-    /** Aggregated sum of all bytes across all languages */
-    let totalBytes: number = 1;
-    $: totalBytes = languages.reduce((acc, [_, bytes]) => acc + bytes, 0);
+    let percent: number = 0;
+    $: percent = percentage(bytes / totalBytes);
+    let cumulativePercent: number = 0;
+    $: cumulativePercent = percentage(cumulativeBytes / totalBytes);
 </script>
 
-<section>
-    <Chart bind:languages bind:totalBytes />
-    <List bind:languages bind:totalBytes />
-</section>
+<!-- SEGMENT -->
+<circle
+    r="15.91549430918954"
+    cx="21"
+    cy="21"
+    fill="transparent"
+    class="transitional"
+    stroke={getLanguageColor(language)}
+    stroke-width={$highlight === language ? "5" : "3"}
+    stroke-dasharray={`${percent} ${100 - percent}`}
+    stroke-dashoffset={`${100 - cumulativePercent}`}
+    class:fade={$highlight && $highlight !== language}
+    transform="rotate(-90) translate(-42)"
+    on:mouseover={() => setHovering(language)}
+    on:focus={() => setHovering(language)}
+    on:mouseout={() => clearHovering()}
+    on:blur={() => clearHovering()}
+/>
 
 <style>
-    section {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        gap: 1rem;
-        padding: 0 1rem;
+    .transitional {
+        transition: all var(--animation-duration) ease-in;
     }
 
-    @media (max-width: 768px) {
-        section {
-            flex-direction: column;
-            justify-content: flex-start;
-        }
+    .fade {
+        opacity: 0.33;
     }
 </style>

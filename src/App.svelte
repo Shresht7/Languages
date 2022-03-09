@@ -4,7 +4,7 @@
 
   //  Components
   import Header from "./layout/Header.svelte";
-  import ChartSection from "./components/ChartSection.svelte";
+  import Languages from "./components/Languages.svelte";
   import Footer from "./layout/Footer.svelte";
 
   //  Theme
@@ -18,7 +18,7 @@
 <Header />
 
 <main>
-  <ChartSection />
+  <Languages />
 </main>
 
 <Footer />
