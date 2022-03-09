@@ -47,6 +47,12 @@
         opacity: 0;
     }
 
+    @media (max-width: 768px) {
+        div {
+            max-width: 75%;
+        }
+    }
+
     svg {
         width: 100%;
         height: 100%;
