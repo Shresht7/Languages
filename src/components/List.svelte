@@ -132,7 +132,9 @@
         li {
             width: 80%;
         }
+    }
 
+    @media (min-width: 768px) {
         /* --------- */
         /* SCROLLBAR */
         /* --------- */
