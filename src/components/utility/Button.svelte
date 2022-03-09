@@ -24,4 +24,8 @@
     button:focus {
         opacity: 0.8;
     }
+
+    button:disabled {
+        opacity: 0.3;
+    }
 </style>

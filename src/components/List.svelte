@@ -63,7 +63,7 @@
         align-items: flex-start;
         flex-wrap: wrap;
         gap: 0.5rem;
-        padding: 0rem 1rem;
+        padding: 1rem;
         overflow-y: hidden;
         scroll-behavior: auto;
     }

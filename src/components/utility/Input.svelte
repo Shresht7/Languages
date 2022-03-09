@@ -11,7 +11,7 @@
 <div>
     <form on:submit|preventDefault>
         <input bind:value placeholder="username" />
-        <Button type="submit" style="padding: 0.5rem;">
+        <Button type="submit" style="padding: 0.5rem;" disabled={value === ""}>
             <Icon><IoIosReturnLeft /></Icon>
         </Button>
     </form>
