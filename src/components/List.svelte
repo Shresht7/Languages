@@ -1,6 +1,4 @@
 <script lang="ts">
-    import { onMount } from "svelte";
-
     //  Transition
     import { fly } from "svelte/transition";
 
@@ -70,32 +68,6 @@
         scroll-behavior: auto;
     }
 
-    @media (min-width: 768px) {
-        /* width */
-        ol::-webkit-scrollbar {
-            height: 4px;
-            border-radius: 2px;
-        }
-
-        /* Track */
-        ol::-webkit-scrollbar-track {
-            background-color: #575757;
-            border-radius: 2px;
-        }
-
-        /* Handle */
-        ol::-webkit-scrollbar-thumb {
-            background-color: #999;
-            border-radius: 2px;
-        }
-
-        /* Handle on hover */
-        ol::-webkit-scrollbar-thumb:hover {
-            background-color: var(--clr-text);
-            border-radius: 2px;
-        }
-    }
-
     li {
         --clr: var(--clr-text);
         width: 100%;
@@ -112,15 +84,6 @@
         transition: all var(--animation-duration) ease-in;
         position: relative;
         overflow: hidden;
-    }
-
-    @media (max-width: 768px) {
-        ol {
-            max-height: 60vh;
-        }
-        li {
-            width: 80%;
-        }
     }
 
     .highlighted {
@@ -162,7 +125,40 @@
         }
 
         ol {
+            max-height: 60vh;
             padding: 0.5rem;
+        }
+
+        li {
+            width: 80%;
+        }
+
+        /* --------- */
+        /* SCROLLBAR */
+        /* --------- */
+
+        /* width */
+        ol::-webkit-scrollbar {
+            height: 4px;
+            border-radius: 2px;
+        }
+
+        /* Track */
+        ol::-webkit-scrollbar-track {
+            background-color: #575757;
+            border-radius: 2px;
+        }
+
+        /* Handle */
+        ol::-webkit-scrollbar-thumb {
+            background-color: #999;
+            border-radius: 2px;
+        }
+
+        /* Handle on hover */
+        ol::-webkit-scrollbar-thumb:hover {
+            background-color: var(--clr-text);
+            border-radius: 2px;
         }
     }
 </style>
