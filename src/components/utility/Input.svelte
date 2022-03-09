@@ -13,7 +13,7 @@
 <div>
     <form on:submit|preventDefault>
         <input bind:value placeholder="username" />
-        <Button type="submit" style="padding: 0.5rem;" disabled={value === ""}>
+        <Button type="submit" style="padding: 0.5rem;">
             <Icon>
                 {#if !loading}
                     <IoIosReturnLeft />
