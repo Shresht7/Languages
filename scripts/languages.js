@@ -15,9 +15,9 @@ export function listRepositories(user) {
 }
 
 /**
- * Fetches the list of languages (and corresponding bytes) used in the repo.
+ * Fetches the list of languages (and corresponding bytes) used in the repo
  * @param {string} user GitHub UserName
- * @param {string} repo GitHub Repository Name
+ * @param {string} repo GitHub RepositoryName
  * @returns {Record<string, number>} Map of languages with their corresponding bytes
  */
 export function getRepoLanguages(user, repo) {
@@ -52,11 +52,11 @@ export async function getLanguageStats(...users) {
 
 //  Get github username - passed in as an argument from the workflow file
 const user = process.env.GITHUB_ACTOR
-if (!user) { console.error('Unable to determine username') }
+if (!user) { console.error('Unable to determine username'); process.exit(1) }
 
-console.log(user)
 //  Get language stats
 const aggregate = await getLanguageStats(user)
 
 //  Write aggregated data to disk
-fs.writeFileSync('./src/data/language.json', JSON.stringify(aggregate, null, 2))
+const dest = './src/data/language.json'
+fs.writeFileSync(dest, JSON.stringify(aggregate, null, 2))
