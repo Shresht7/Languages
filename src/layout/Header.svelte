@@ -8,7 +8,7 @@
     import { getLanguageStats } from "../library";
 
     //  Transition
-    import { fly } from 'svelte/transition'
+    import { fly } from "svelte/transition";
 
     let username = "";
     async function fetchData() {
@@ -41,7 +41,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        gap: 0.75rem;
+        gap: 0.5rem;
     }
 
     @media (max-width: 768px) {

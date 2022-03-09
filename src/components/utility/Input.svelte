@@ -29,7 +29,7 @@
     }
 
     form {
-        gap: 0.33rem;
+        gap: 0.5rem;
     }
 
     input {
