@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "js-yaml": "^4.1.0",
-    "node-fetch": "^3.2.2",
+    "node-fetch": "^3.2.3",
     "svelte-icons": "^2.1.0"
   }
 }
