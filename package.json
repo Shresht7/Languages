@@ -11,7 +11,7 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.47",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.49",
     "@tsconfig/svelte": "^3.0.0",
     "svelte": "^3.48.0",
     "svelte-check": "^2.7.2",
@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "js-yaml": "^4.1.0",
-    "node-fetch": "^3.2.4",
+    "node-fetch": "^3.2.6",
     "svelte-icons": "^2.1.0"
   }
 }
